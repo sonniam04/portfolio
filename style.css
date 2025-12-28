@@ -1,0 +1,86 @@
+:root {
+  --bg-color: #0d1117;
+  --text-color: #c9d1d9;
+  --primary-color: #2ea043;
+  --secondary-color: #3fb950;
+  --card-bg: #161b22;
+}
+body {
+  font-family: "BBH Bartle", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+}
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  div {
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  nav {
+    display: flex;
+    list-style: none;
+    li {
+      padding: 10px;
+      a {
+        text-decoration: none;
+        color: var(--text-color);
+        transition: 0.3s;
+        font-size: 13px;
+      }
+      a:hover {
+        background-image: linear-gradient(
+          to right,
+          var(--secondary-color),
+          purple
+        );
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+      }
+    }
+  }
+  .bars {
+    display: none;
+    font-size: larger;
+    cursor: pointer;
+  }
+}
+@media (max-width: 768px) {
+  header {
+    max-width: 768px;
+    display: block;
+    position: relative;
+    nav {
+      max-height: 0;
+      opacity: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+      background-color: var(--card-bg);
+      li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      }
+    }
+    #nav.toggle {
+      max-height: 500px;
+      opacity: 1;
+    }
+    .bars {
+      display: block;
+      padding: 10px;
+    }
+  }
+}
