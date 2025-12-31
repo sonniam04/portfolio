@@ -10,27 +10,158 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&family=BBH+Hegarty&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=BBH+Bartle&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <title>Portfolio</title>
 </head>
 
 <body>
     <header>
-        <div >
+
+        <div class="menu-responsive">
             <p><strong>Portfolio</strong></p>
             <li class="bars">
                 <i class="fa-solid fa-bars" onclick="menubar()"></i>
             </li>
         </div>
-
-        <nav id="nav">
-            <li><a href="#">About me</a></li>
-            <li><a href="#">Skill</a></li>
-            <li><a href="#">Projects</a></li>
-            <li><a href="#">Contact me</a></li>
+        <nav id="navigation-bar">
+            <li class="nav-item" onclick="scrollToAbout('profile')">
+                <p>HOME</p>
+            </li>
+            <li class="nav-item" onclick="scrollToAbout('aboutme')">
+                <p>ABOUT ME</p>
+            </li>
+            <li class="nav-item" onclick="scrollToAbout('skill')">
+                <p>SKILL</p>
+            </li>
+            <li class="nav-item" onclick="scrollToAbout('showcase')">
+                <p>SHOWCASE</p>
+            </li>
+            <li class="nav-item" onclick="scrollToAbout('contact')">
+                <p>CONTACT ME</p>
+            </li>
         </nav>
-
     </header>
+
+    <main>
+        <section class="profile" id="profile">
+            <div class="info">
+                <h3>HELLO, <span style="color: var(--primary-color);">I am</span></h3>
+                <h1>JESSADA SONNIAM</h1>
+                <h3 style="color: var(--primary-color);"><strong>FULL-STACK DEVELOPER</strong></h3>
+                <p>เว็บไซต์นี้ถูกสร้างขึ้นเพื่อใช้เป็นพื้นที่ในการรวบรวมและนำเสนอผลงานของผม
+                    รวมถึงเป็นส่วนหนึ่งของการฝึกฝนทักษะด้านการพัฒนาเว็บ ทั้งฝั่ง Front-End และ Back-End
+                    ผมให้ความสำคัญกับการเขียนโค้ดที่เป็นระบบ เข้าใจง่าย และสามารถนำไปพัฒนาต่อยอดได้จริง
+                    พร้อมเรียนรู้เทคโนโลยีใหม่ ๆ อย่างต่อเนื่อง เพื่อพัฒนาศักยภาพของตนเองในสายงานนี้</p>
+                <div class="my-social">
+                    <a href="https://www.facebook.com/jessada.sonniam" target="_blank"><i
+                            class="fa-brands fa-facebook"></i></a>
+                    <a href=""><i class="fa-brands fa-instagram" target="_blank"></i></a>
+                    <a href="https://github.com/sonniam04" target="_blank"><i class="fa-brands fa-github"></i></a>
+                    <a href=""><i class="fa-brands fa-linkedin" target="_blank"></i></a>
+                </div>
+                <div class="cv-button">
+                    <button class="cv">download CV</button>
+                </div>
+            </div>
+            <div class="my-image">
+                <img src="/New folder/508692c5-d45f-4e7a-97cc-75acbe379167-removebg-preview.png" alt="">
+            </div>
+        </section>
+        <section class="about-me" id="aboutme">
+            <div class="info-me">
+                <h1><span style="color: var(--primary-color);">About</span> me</h1>
+                <p>ผมชื่อ เจษฎา สอนเนียม
+                    เป็นผู้ที่กำลังพัฒนาทักษะด้านการเขียนโปรแกรมเพื่อก้าวสู่การเป็น Full-Stack Developer</p>
+
+                <p>ผมมีความสนใจในการพัฒนาเว็บไซต์ทั้งฝั่ง Front-End และ Back-End
+                    โดยเน้นการเขียนโค้ดที่เป็นระบบ อ่านง่าย และสามารถนำไปใช้งานจริงได้
+                    มีประสบการณ์ในการใช้งานเทคโนโลยีอย่าง HTML, CSS, JavaScript และ Framework React, Next.js, Vue,
+                    Tailwind</p>
+
+                <p>ปัจจุบันผมมุ่งเน้นการเรียนรู้และฝึกฝนอย่างต่อเนื่อง
+                    เพื่อยกระดับทักษะและสร้างผลงานที่มีคุณภาพ
+                    พร้อมเปิดรับโอกาสใหม่ ๆ ในสายงานพัฒนาเว็บไซต์และซอฟต์แวร์</p>
+
+            </div>
+            <div class="education-me">
+                <h1>Education</h1>
+                <div class="edu">
+                    <h3>โรงเรียนบางแก้วพิทยาคม <a target="_blank"
+                            href="https://www.google.com/maps/place/%E0%B9%82%E0%B8%A3%E0%B8%87%E0%B9%80%E0%B8%A3%E0%B8%B5%E0%B8%A2%E0%B8%99%E0%B8%9A%E0%B8%B2%E0%B8%87%E0%B9%81%E0%B8%81%E0%B9%89%E0%B8%A7%E0%B8%9E%E0%B8%B4%E0%B8%97%E0%B8%A2%E0%B8%B2%E0%B8%84%E0%B8%A1/@7.4147519,100.1596807,1163m/data=!3m2!1e3!4b1!4m6!3m5!1s0x304d6db9b51122b1:0xacc67ce2a72277d8!8m2!3d7.4147519!4d100.1596807!16s%2Fg%2F1hc3jvcxj?entry=ttu&g_ep=EgoyMDI1MTIwOS4wIKXMDSoASAFQAw%3D%3D">ที่ตั้ง</a>
+                    </h3>
+                    <span>มัธยมศึกษาตอนต้น – ตอนปลาย</span>
+                    <span>2016 – 2022</span>
+                    <div>
+                        <span>ผลการศึกษา 3.86</span>
+                    </div>
+                </div>
+                <div class="edu">
+                    <h3>มหาวิทยาลัยศิลปากร วิทยาเขตสนามจันทร์ <a target="_blank"
+                            href="google.com/maps/place/มหาวิทยาลัยศิลปากร+วิทยาเขตพระราชวังสนามจันทร์%E2%80%8B/data=!4m2!3m1!1s0x0:0x18c800b2e15effc7?sa=X&ved=1t:2428&ictx=111">ที่ตั้ง</a>
+                    </h3>
+                    <span>ปริญญาตรี คณะวิทยาศาสตร์ สาขาวิทยาการคอมพิวเตอร์</span>
+                    <span>2023 - ปัจจุบัน</span>
+                    <div>
+                        <span>ผลการศึกษา 3.66</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="skill" id="skill">
+            <div>
+                <h1>Tech Skill</h1>
+            </div>
+            <h2>Font end</h2>
+            <div class="card-fontend cd">
+                <div class="card-skill"><i class="fa-brands fa-html5"></i><br><span>HTML</span></div>
+                <div class="card-skill"><i class="fa-brands fa-css"></i><br><span>CSS</span></div>
+                <div class="card-skill"><i class="fa-brands fa-js"></i><br><span>JavaScript</span></div>
+            </div>
+            <h2>Back end & Programming language</h2>
+            <div class="card-backend cd">
+                <div class="card-skill"><i class="fa-brands fa-node"></i><br><span>node.js</span></div>
+                <div class="card-skill"><i class="fa-brands fa-java"></i><br><span>Java</span></div>
+                <div class="card-skill"><i class="fa-solid fa-c"></i><br><span>C</span></div>
+                <div class="card-skill"><i class="fa-solid fa-gem"></i><br><span>Ruby</span></div>
+            </div>
+            <h2>Database</h2>
+            <div class="card-database cd">
+                <div class="card-skill"><i class="fa-solid fa-database"></i><br><span>Postgresql</span></div>
+                <div class="card-skill"><i class="fa-solid fa-database"></i><br><span>MongoDB</span></div>
+            </div>
+        </section>
+        <section class="showcase" id="showcase">
+            <h1 style="text-align: center;">SHOWCASE</h1>
+            <div class="slider">
+                <div class="slide active">
+                    <a href=""><img src="/New folder/pj1.png" alt=""></a>
+                    <strong style="font-size: 30px;">portfolio website</strong>
+                </div>
+                <div class="slide">
+                    <a href=""><img src="/New folder/pj2.png" alt=""></a>
+                    <strong style="font-size: 30px;">facebook</strong>
+                </div>
+                <button class="prev">❮</button>
+                <button class="next">❯</button>
+            </div>
+
+        </section>
+        <section class="contact" id="contact">
+            <h1>Contact</h1>
+            <p>If you are interested in working together, feel free to reach out.</p>
+            <div class="social">
+                <a href="https://www.facebook.com/jessada.sonniam" target="_blank"><i
+                        class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram" target="_blank"></i></a>
+                <a href="https://github.com/sonniam04" target="_blank"><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin" target="_blank"></i></a>
+            </div>
+        </section>
+
+    </main>
     <script src="script.js"></script>
 </body>
 

@@ -6,81 +6,334 @@
   --card-bg: #161b22;
 }
 body {
-  font-family: "BBH Bartle", sans-serif;
-  font-weight: 300;
-  font-style: normal;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  background-color: var(--bg-color);
+
+  background: radial-gradient(
+      circle at top left,
+      rgba(46, 160, 67, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at bottom right,
+      rgba(63, 185, 80, 0.12),
+      transparent 45%
+    ),
+    var(--bg-color);
+
   color: var(--text-color);
 }
+/* -------- HEADER -------- */
 header {
+  font-family: "BBH Bartle", sans-serif;
+  font-weight: 300;
+  font-style: normal;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  div {
-    padding: 10px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+header .menu-responsive {
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header .menu-responsive .bars {
+  display: none;
+  font-size: larger;
+  cursor: pointer;
+}
+header #navigation-bar {
+  display: flex;
+  list-style: none;
+}
+header #navigation-bar .nav-item {
+  padding: 10px;
+}
+header #navigation-bar .nav-item p {
+  color: var(--text-color);
+  transition: 0.3s;
+  font-size: 13px;
+  cursor: pointer;
+}
+header #navigation-bar .nav-item p:hover {
+  background-image: linear-gradient(to right, var(--secondary-color), purple);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  color: #fff;
+  text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
+}
+/* -------- MAIN HOME -------- */
+main .profile {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 1.8;
+  column-gap: 2rem;
+  min-height: 100vh;
+  row-gap: 0;
+  padding: 0 5%;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  padding-top: 100px;
+}
+main .profile .info {
+  text-align: start;
+  font-family: "Kanit", sans-serif;
+  animation: fadeInUp 1s ease-out forwards;
+}
+main .profile .info .my-social {
+  font-size: 40px;
+}
+main .profile .info .my-social i {
+  color: white;
+  cursor: pointer;
+}
+main .profile .info .cv-button .cv {
+  margin-top: 15px;
+  padding: 12px 20px;
+  border-radius: 12px;
+
+  background: rgba(255, 255, 255, 0.1); /* ใส */
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #fff;
+
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+main .profile .info .cv-button .cv:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 10px var(--primary-color);
+}
+main .profile .info .cv-button .cv:active {
+  transform: scale(0.97);
+}
+
+main .profile .info .my-social i:hover {
+  text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
+}
+main .profile .my-image {
+  text-align: center;
+}
+main .profile img {
+  margin: 0 auto;
+  width: clamp(100px, 30vw, 600px);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
+  animation: upside 3s ease-in-out infinite;
+}
+@keyframes upside {
+  0%,
+  100% {
+    transform: translateY(0);
   }
-  nav {
-    display: flex;
-    list-style: none;
-    li {
-      padding: 10px;
-      a {
-        text-decoration: none;
-        color: var(--text-color);
-        transition: 0.3s;
-        font-size: 13px;
-      }
-      a:hover {
-        background-image: linear-gradient(
-          to right,
-          var(--secondary-color),
-          purple
-        );
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent;
-      }
-    }
+  50% {
+    transform: translateY(-10px);
   }
-  .bars {
-    display: none;
-    font-size: larger;
-    cursor: pointer;
+}
+main .profile .info h1 {
+  font-family: "Poppins", sans-serif;
+}
+main .profile .info h3 {
+  font-family: "Poppins", sans-serif;
+}
+/* -------- MAIN ABOUT ME -------- */
+main .about-me {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  line-height: 1.8;
+  column-gap: 2rem;
+  min-height: 100vh;
+  row-gap: 0;
+  padding: 0 5%;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  padding-top: 100px;
+  font-family: "Kanit", sans-serif;
+}
+
+main .about-me .education-me .edu {
+  background-color: var(--card-bg);
+  padding: 10px 30px;
+  margin-top: 10px;
+  border-radius: 10px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+main .about-me .education-me .edu:hover {
+  transform: translateY(-5px); /* ลอยขึ้น 5px */
+  box-shadow: 0 10px 20px rgba(0, 255, 127, 0.1);
+}
+main .about-me .education-me .edu a {
+  color: skyblue;
+}
+/* -------- MAIN SKILL -------- */
+main .skill {
+  line-height: 1.8;
+  min-height: 100vh;
+  padding: 0 5%;
+  padding-top: 50px;
+  font-family: "Kanit", sans-serif;
+}
+main .skill .cd {
+  display: flex;
+  background-color: var(--card-bg);
+  padding: 15px 0;
+  border-radius: 10px;
+}
+main .skill .cd i {
+  font-size: 60px;
+}
+main .skill .card-skill {
+  text-align: center;
+  padding-left: 10px;
+}
+/* -------- MAIN SHOW CASE -------- */
+main .showcase {
+  line-height: 1.8;
+  min-height: 100vh;
+  padding: 0 5%;
+  padding-top: 50px;
+  font-family: "Kanit", sans-serif;
+  position: relative;
+}
+main .showcase .slider {
+  max-width: 920px;
+  margin: auto;
+  overflow: hidden;
+  position: relative;
+  border-radius: 16px;
+  
+}
+
+main .showcase .slide {
+  display: none;
+  animation: fade 0.6s ease;
+  text-align: center;
+  padding-top: 15px;
+}
+
+main .showcase .slide.active {
+  display: block;
+}
+
+main .showcase .slide img {
+  width: 95%;
+  border-radius: 16px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  aspect-ratio: 16 / 9;
+  box-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
+}
+main .showcase .prev,
+main .showcase .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+main .showcase .prev {
+  left: 10px;
+}
+main .showcase .next {
+  right: 10px;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
   }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* -------- MAIN CONTACT -------- */
+main .contact {
+  line-height: 1.8;
+  min-height: 100vh;
+  padding: 0 5%;
+  padding-top: 50px;
+  font-family: "Kanit", sans-serif;
+  text-align: center;
+  place-content: center;
+   font-size: 30px;
+}
+main .contact .social {
+  font-size: 70px;
+  
+}
+main .contact .social i {
+  color: white;
+}
+main .contact  .social i:hover {
+  text-shadow: 0 0 5px var(--primary-color), 0 0 15px var(--primary-color),
+    0 0 30px var(--primary-color);
 }
 @media (max-width: 768px) {
   header {
+    height: 50px;
     max-width: 768px;
     display: block;
-    position: relative;
-    nav {
-      max-height: 0;
-      opacity: 0;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      width: 100%;
-      transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
-      background-color: var(--card-bg);
-      li {
-        text-align: center;
-        padding: 15px 0;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-      }
-    }
-    #nav.toggle {
-      max-height: 500px;
-      opacity: 1;
-    }
-    .bars {
-      display: block;
-      padding: 10px;
-    }
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+  header .menu-responsive .bars {
+    display: block;
+    padding: 10px;
+  }
+  header #navigation-bar {
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    background-color: var(--card-bg);
+  }
+  header #navigation-bar .nav-item {
+    text-align: center;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  }
+  header #navigation-bar.toggle {
+    max-height: 500px;
+    opacity: 1;
+  }
+  main .showcase .prev,
+main .showcase .next {
+  top: 45%;
+}
+}
+@media (max-width: 500px) {
+  main .profile .info {
+    order: 2;
+  }
+  main .profile .my-image {
+    order: 1;
+    height: auto;
+  }
+  main .profile {
+    min-height: auto;
+    align-items: start;
   }
 }
