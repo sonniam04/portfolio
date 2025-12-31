@@ -337,6 +337,6 @@ main .showcase .next {
     align-items: start;
   }
   main .showcase {
-    height: auto;
+    min-height: auto;
   }
 }
